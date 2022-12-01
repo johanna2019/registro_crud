@@ -35,7 +35,6 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
 										<th>Nombre</th>
 										<th>Cedula</th>
 										<th>Email</th>
@@ -45,7 +44,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($empleado as $empleado)
+                                    @foreach ($empleados as $empleado)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             

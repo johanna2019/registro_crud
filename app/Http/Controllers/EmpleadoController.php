@@ -20,7 +20,7 @@ class EmpleadoController extends Controller
     {
         $empleados = Empleado::paginate();
 
-        return view('empleado.index', compact('empleado'))
+        return view('empleado.index', compact('empleados'))
             ->with('i', (request()->input('page', 1) - 1) * $empleados->perPage());
     }
 
