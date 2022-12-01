@@ -16,7 +16,7 @@
                         <span class="card-title">Create Empleado</span>
                     </div>
                     <div class="card-body">
-                        <form method="get" action="{{ route('empleado.create') }}"  role="form" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('empleado.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('empleado.form')

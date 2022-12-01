@@ -15,12 +15,13 @@
                             <span id="card_title">
                                 {{ __('Empleado') }}
                             </span>
-
+                            @can('roles')
                              <div class="float-right">
                                 <a href="{{ route('empleado.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
+                              @endcan
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -52,7 +53,7 @@
 											<td>{{ $empleado->cedula }}</td>
 											<td>{{ $empleado->Email }}</td>
 											<td>{{ $empleado->contraseña }}</td>
-
+                                            @can('roles')
                                             <td>
                                                 <form action="{{ route('empleado.destroy',$empleado->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('empleado.show',$empleado->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
@@ -62,6 +63,7 @@
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
+                                            @endcan
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -71,6 +73,7 @@
                 </div>
                 {!! $empleados->links() !!}
             </div>
+           
         </div>
     </div>
 @endsection

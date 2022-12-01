@@ -20,5 +20,13 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call([
+            RolSeeder::class,
+        ]);
+        \App\Models\User::factory(10)->create();
+        $this->call([
+           UserSeeder::class,
+       ]);
+      
     }
 }

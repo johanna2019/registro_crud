@@ -47,7 +47,7 @@ class EmpleadoController extends Controller
 
         $empleado = Empleado::create($request->all());
 
-        return redirect()->route('empleados.index')
+        return redirect()->route('empleado.index')
             ->with('success', 'Empleado created successfully.');
     }
 
@@ -90,7 +90,7 @@ class EmpleadoController extends Controller
 
         $empleado->update($request->all());
 
-        return redirect()->route('empleados.index')
+        return redirect()->route('empleado.index')
             ->with('success', 'Empleado updated successfully');
     }
 
